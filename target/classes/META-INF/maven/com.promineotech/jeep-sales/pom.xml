@@ -49,9 +49,30 @@
   		  <groupId>org.springdoc</groupId>
     	  <artifactId>springdoc-openapi-ui</artifactId>
     	  <version>1.7.0</version>
-</dependency>
-	</dependencies>
+		</dependency>
+	<!-- Databse Dependencies -->
+	<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jdbc -->
+		<dependency>
+    		<groupId>org.springframework.boot</groupId>
+    		<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+	<dependency>
+    	<groupId>mysql</groupId>
+    	<artifactId>mysql-connector-java</artifactId>
+    	<version>8.0.23</version>
+	</dependency>
+	
+	<!-- Test dependencies -->
+	
+	<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+	<dependency>
+    	<groupId>com.h2database</groupId>
+    	<artifactId>h2</artifactId>
+    	<scope>test</scope>
+	</dependency>
 
+	
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>

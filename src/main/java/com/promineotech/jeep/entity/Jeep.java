@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class Jeep {
   private Long modelPK;
   private JeepModel modelId;
-  private String timeLevel;
+  private String trimLevel;
   private int numDoors;
   private int wheelSize;
   private BigDecimal basePrice;
