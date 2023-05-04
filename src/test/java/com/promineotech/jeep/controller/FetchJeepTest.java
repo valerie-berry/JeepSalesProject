@@ -49,6 +49,7 @@ class FetchJeepTest {
 
     
      @Test
+     // Test the temporary H2 database
      void testDb() {
        int numrows = JdbcTestUtils.countRowsInTable(jdbcTemplate, "customers" );
        System.out.println("num of rows = " + numrows);
@@ -62,6 +63,7 @@ class FetchJeepTest {
     private int serverPort;
 
     @Test
+    // Are jeeps returned if we call the API with valid data? 
     void testThatJeepsAreReturnedWhenAValidModelAndTrimAreSupplied() {
       // Given: a valid model, trim, and URI
 
@@ -87,6 +89,8 @@ class FetchJeepTest {
 
     @ParameterizedTest
     @MethodSource("com.promineotech.jeep.controller.FetchJeepTest#parametersForInvalidInput")
+    
+    // Is an error message returned when the API is called with invalid data
     void testThatAnErrorMessageIsReturnedWhenAnInvalidTrimIsSupplied(String model, String trim,
         String reason) {
       // Given: a valid model, trim, and URI
@@ -136,7 +140,7 @@ class FetchJeepTest {
       JeepModel model = JeepModel.WRANGLER;
       String trim = "Invalid";
       String uri =
-          String.format("%s?model=%s&trim=%s", getBaseUri(), model, trim);
+          String.format("%s?model=%s&trim=%s", getBaseUriForJeeps(), model, trim);
       
       doThrow(new RuntimeException("Ouch!")).when(jeepSalesService)
         .fetchJeeps(model, trim);
